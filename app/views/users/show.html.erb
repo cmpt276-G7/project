@@ -3,8 +3,9 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @user.name %> <%= @user.email %>
-        <p> main page after log in, customizable to user settings soon (tm) </p>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+        <p><%= @user.email %></p>
       </h1>
     </section>
   </aside>
