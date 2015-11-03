@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  # facebook authentication
+get '/auth/new' => 'authentications#new'
+get '/auth/facebook/callback' => 'authentications#create'
+get "/auth/failure" => "authentications#failure" #OMNIAUTH, ,
+get "facebook/logout", :to => "authentications#logout", :as => :logout_authentication
+
+
+
   get 'users/new'
 
   root             'static_pages#home'
