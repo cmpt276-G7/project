@@ -38,4 +38,10 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  def self.koala(auth)
+    access_token = auth['token']
+    facebook = Koala::Facebook::API.new(access_token)
+    facebook.get_object("me?fields=name,picture")
+  end
 end
