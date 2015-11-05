@@ -10,7 +10,7 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'omniauth-facebook'
-gem 'koala'
+gem "koala", "~> 1.10.0rc"
 
 # Use postgresql as the database for Active Record
 gem 'pg'
