@@ -41,7 +41,6 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
 
-
    private
 
     # Converts email to all lower-case.
@@ -55,5 +54,9 @@ class User < ActiveRecord::Base
       self.activation_digest = User.digest(activation_token)
     end
 
-  
+    def self.koala(auth)
+      access_token = auth['token']
+      facebook = Koala::Facebook::API.new(access_token)
+      facebook.get_object("me?fields=name,picture")
+    end
 end
