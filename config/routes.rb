@@ -9,10 +9,16 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  #get 'authindex' => 'authentications#index'
 
-  get 'auth/facebook', as: "auth_provider"
-  get 'auth/facebook/callback', to: 'users#login'
-  resources :users
+  get 'auth/:provider/callback', to: 'authentications#create'
+
+  #get 'auth/facebook', as: "auth_provider"
+  #get 'auth/facebook/callback', to: 'users#login'
+
+  resources :users do
+    resources :authentications, only: [:index]
+  end
   resources :account_activations, only: [:edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
