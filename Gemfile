@@ -7,9 +7,12 @@ gem 'rails', '4.2.4'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'puma'
-gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'omniauth'
+gem 'nifty-generators'
+gem 'omniauth-facebook'
+gem "koala", "~> 1.10.0rc"
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -52,3 +55,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mocha', group: :test
