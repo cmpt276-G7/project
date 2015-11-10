@@ -1,2 +1,13 @@
-<h1>Authentications#create</h1>
-<p>Find me in app/views/authentications/create.html.erb</p>
+<% provide(:title, 'Your accounts') %>
+
+<%= link_to "Login with Facebook", '/auth/facebook' %>
+<%= @user.name %>
+
+  <%= @authentications.provider %>
+  <%= @authentications.uid %>
+
+<% if fb_authenticated? %>
+  <%= image_tag @fbdata['picture']['data']['url'].to_s %>
+  <%= @fbdata['name'] %>
+
+<% end %>

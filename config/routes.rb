@@ -9,12 +9,11 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  #get 'authindex' => 'authentications#index'
 
   get 'auth/:provider/callback', to: 'authentications#create'
 
   #get 'auth/facebook', as: "auth_provider"
-  #get 'auth/facebook/callback', to: 'users#login'
+  #get 'auth/facebook/callback', to: 'authentications#index'
 
   resources :users do
     resources :authentications, only: [:index]

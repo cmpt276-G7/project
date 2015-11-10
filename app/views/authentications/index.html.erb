@@ -1,7 +1,11 @@
 <% provide(:title, 'Your accounts') %>
 
-<%= link_to "Login with Facebook", 'auth/facebook' %>
+<%= link_to "Login with Facebook", '/auth/facebook' %>
 <%= @user.name %>
 
+  <%= @authentications.provider %>
+  <%= @authentications.uid %>
+
 <% if fb_authenticated? %>
+
 <% end %>
