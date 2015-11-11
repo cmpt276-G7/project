@@ -12,4 +12,4 @@
 !/log/.keep
 /tmp
 
-/config/facebook.yml
+#/config/facebook.yml
