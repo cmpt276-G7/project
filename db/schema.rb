@@ -16,6 +16,14 @@ ActiveRecord::Schema.define(version: 20151110063504) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -23,10 +31,10 @@ ActiveRecord::Schema.define(version: 20151110063504) do
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.boolean  "admin",             default: false
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
-    t.boolean  "admin"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
   end
