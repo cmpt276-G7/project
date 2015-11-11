@@ -30,6 +30,14 @@ Many thanks to [Michael Hartl's Rails Book](https://www.railstutorial.org/book/f
 
 -really need to start work on layout (should ask the group.... if they feel like working on it.......)
 
--need to study callbacks (URL) and api calls more... probably need to store all credential data in a DB for calls from pages other than auth/:provider to auth/:provider/callback
+~~-need to study callbacks (URL) and api calls more... probably need to store all credential data in a DB for calls from pages other than auth/:provider to auth/:provider/callback~~
 
--thus, more migrations!!
+~~-thus, more migrations!!~~
+
+##### Remarks (Nov 10):
+
+-added columns to store user tokens, now can call facebook API calls on other pages
+
+-users should be able to log in with facebook and see their name/picture
+
+-start to implement other platforms, and add security measures for current authentications

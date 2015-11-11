@@ -1,24 +1,37 @@
 class AuthenticationsController < ApplicationController
   include SessionsHelper
+  include AuthenticationsHelper
 
   def index
     @user = current_user
 #    @authentication = Authentication.find_by(user_id: @user.id)
     @authentications = Authentication.find_by(user_id: @user.id)
 
+    if fb_authenticated?(@user)
+      #fbauth = @authentications.find_by(provider: "facebook")
+      #@fbdata = User.koala(fbauth.token)
+    end
+
   end
 
   def create
     @user = current_user
     auth = request.env["omniauth.auth"]
-    if Authentication.where(provider: auth['provider']).where(uid: auth['uid']).exists?
-      flash[:success] = "Authentication renewed"
+    if @user.authentications.where(provider: auth['provider']).where(uid: auth['uid']).exists?
+
+      thisauth = @user.authentications.find_by(provider: auth['provider'], uid: auth['uid'])
+      thisauth.updatecredentials(auth["credentials"])
+      flash[:success] = "Authentication renewed!"
+
     else
-      current_user.authentications.create(provider: auth['provider'], uid: auth['uid'])
-      flash[:success] = "Authentication successful."
+      @user.authentications.create(provider: auth['provider'], uid: auth['uid'],
+          token: auth['credentials']['token'], secret: auth['credentials']['secret'],
+          expires: auth['credentials']['expires'], expires_at: auth['credentials']['expires_at'])
+      flash[:success] = "Authentication successful!"
+
     end
     @authentications = Authentication.find_by(user_id: @user.id)
-    @fbdata = User.koala(auth['credentials'])
+    @fbdata = User.koala(auth['credentials']['token'])
     #redirect_to user_authentications_url(current_user)
   end
 

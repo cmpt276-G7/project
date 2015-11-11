@@ -6,7 +6,7 @@
   <%= @authentications.provider %>
   <%= @authentications.uid %>
 
-<% if fb_authenticated? %>
+<% if fb_authenticated?(@user) %>
   <%= image_tag @fbdata['picture']['data']['url'].to_s %>
   <%= @fbdata['name'] %>
 

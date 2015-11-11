@@ -3,9 +3,12 @@
 <%= link_to "Login with Facebook", '/auth/facebook' %>
 <%= @user.name %>
 
-  <%= @authentications.provider %>
-  <%= @authentications.uid %>
+  <% unless @authentications.nil? %>
+    <%= @authentications.provider %>
+    <%= @authentications.uid %>
+  <% end %>
 
-<% if fb_authenticated? %>
+  <% if fb_authenticated?(@user) %>
+    You are authenticated with Facebook! Congratulations!
 
-<% end %>
+  <% end %>

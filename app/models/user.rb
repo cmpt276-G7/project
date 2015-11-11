@@ -96,9 +96,8 @@ class User < ActiveRecord::Base
 
 #===============================
     #facebook api
-    def self.koala(auth)
-      access_token = auth['token']
-      facebook = Koala::Facebook::API.new(access_token)
+    def self.koala(authtoken)
+      facebook = Koala::Facebook::API.new(authtoken)
       facebook.get_object("me?fields=name,picture")
     end
 
