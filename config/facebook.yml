@@ -1,6 +1,6 @@
 development:
-  app_id: 981835738549395
-  secret: 1e61816882d67071efcb6ca8528dfe4d
+  app_id: 448149462035528
+  secret: 26f5181d9b5d7a5adab54fd391110f97
 production:
   app_id: 981835738549395
   secret: 1e61816882d67071efcb6ca8528dfe4d
