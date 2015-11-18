@@ -5,7 +5,6 @@ production:
   app_id: 448149462035528
   secret: 26f5181d9b5d7a5adab54fd391110f97
 
-
 # main
 #  app_id: 448149462035528
 #  secret: 26f5181d9b5d7a5adab54fd391110f97
