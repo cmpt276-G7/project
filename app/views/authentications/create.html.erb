@@ -1,10 +1,13 @@
 <% provide(:title, 'Your accounts') %>
 
 <%= link_to "Login with Facebook", '/auth/facebook' %>
+<%= link_to "Login with Twitter", '/auth/twitter' %>
 <%= @user.name %>
+
 
   <%= @authentications.provider %>
   <%= @authentications.uid %>
+
 
 <% if fb_authenticated?(@user) %>
   <%= image_tag @fbdata['picture']['data']['url'].to_s %>

@@ -30,8 +30,18 @@ class AuthenticationsController < ApplicationController
       flash[:success] = "Authentication successful!"
 
     end
-    @authentications = Authentication.find_by(user_id: @user.id)
-    @fbdata = User.koala(auth['credentials']['token'])
+
+    #need to take all authentications later
+    @authentications = Authentication.where(user_id: @user.id).take
+
+    #filling facebook data
+    #if auth['provider'] == 'facebook'
+    #  @fbdata = User.koala(auth['credentials']['token'])
+    #elsif @user.authentications.where(provider: 'facebook').exists?
+    #  fbauth = @user.authentications.find(provider: 'facebook')
+    #  @fbdata = User.koala(fbauth.token)
+    #end
+
     #redirect_to user_authentications_url(current_user)
   end
 

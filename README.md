@@ -41,3 +41,7 @@ Many thanks to [Michael Hartl's Rails Book](https://www.railstutorial.org/book/f
 -users should be able to log in with facebook and see their name/picture
 
 -start to implement other platforms, and add security measures for current authentications
+
+##### Remarks (Nov 19):
+
+-authentications slightly more generalized (twitter half implemented)

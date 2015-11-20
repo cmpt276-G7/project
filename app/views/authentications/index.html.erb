@@ -1,11 +1,14 @@
 <% provide(:title, 'Your accounts') %>
 
 <%= link_to "Login with Facebook", '/auth/facebook' %>
+<%= link_to "Login with Twitter", '/auth/twitter' %>
 <%= @user.name %>
 
   <% unless @authentications.nil? %>
-    <%= @authentications.provider %>
-    <%= @authentications.uid %>
+
+      <%= @authentications.provider %>
+      <%= @authentications.uid %>
+
   <% end %>
 
   <% if fb_authenticated?(@user) %>

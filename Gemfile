@@ -12,6 +12,7 @@ gem 'bootstrap-will_paginate'
 gem 'omniauth'
 gem 'nifty-generators'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem "koala", "~> 1.10.0rc"
 
 # Use postgresql as the database for Active Record
