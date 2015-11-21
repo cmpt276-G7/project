@@ -5,8 +5,10 @@
 <%= @user.name %>
 
 
-  <%= @authentications.provider %>
-  <%= @authentications.uid %>
+<% @authentications.each do |auth| %>
+    <%= auth.provider %>
+    <%= auth.uid %>
+<% end %>
 
 
 <% if fb_authenticated?(@user) %>

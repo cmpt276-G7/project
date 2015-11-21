@@ -6,8 +6,10 @@
 
   <% unless @authentications.nil? %>
 
-      <%= @authentications.provider %>
-      <%= @authentications.uid %>
+  <% @authentications.each do |auth| %>
+      <%= auth.provider %>
+      <%= auth.uid %>
+  <% end %>
 
   <% end %>
 
