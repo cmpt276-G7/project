@@ -4,12 +4,11 @@ class AuthenticationsController < ApplicationController
 
   def index
     @user = current_user
-#    @authentication = Authentication.find_by(user_id: @user.id)
     @authentications = Authentication.where(user_id: @user.id)
 
     if fb_authenticated?(@user)
-      #fbauth = @authentications.find_by(provider: "facebook")
-      #@fbdata = User.koala(fbauth.token)
+      fbauth = @authentications.find_by(provider: "facebook")
+      @fbdata = User.koala(fbauth['token'])
     end
 
   end
@@ -31,18 +30,16 @@ class AuthenticationsController < ApplicationController
 
     end
 
-    #need to take all authentications later
     @authentications = Authentication.where(user_id: @user.id)
 
     #filling facebook data
-    #if auth['provider'] == 'facebook'
-    #  @fbdata = User.koala(auth['credentials']['token'])
-    #elsif @user.authentications.where(provider: 'facebook').exists?
-    #  fbauth = @user.authentications.find(provider: 'facebook')
-    #  @fbdata = User.koala(fbauth.token)
-    #end
+    if auth['provider'] == 'facebook'
+      @fbdata = User.koala(auth['credentials']['token'])
+    elsif @user.authentications.where(provider: 'facebook').exists?
+      fbauth = @user.authentications.find_by(provider: 'facebook')
+      @fbdata = User.koala(fbauth.token)
+    end
 
-    #redirect_to user_authentications_url(current_user)
   end
 
   def destroy

@@ -14,6 +14,10 @@
   <% end %>
 
   <% if fb_authenticated?(@user) %>
-    You are authenticated with Facebook! Congratulations!
+    You are authenticated with Facebook, Congratulations!
+    <%= image_tag @fbdata['picture']['data']['url'].to_s %>
+    <%= @fbdata['name'] %>
 
+  <% else %>
+    We couldn't get your Facebook information. Try Logging in again.
   <% end %>

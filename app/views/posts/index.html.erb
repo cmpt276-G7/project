@@ -1,0 +1,13 @@
+<% provide(:title, "Posts") %>
+
+<%= @user.name %>
+
+  <% if fb_authenticated?(@user) %>
+    <% @posts.each do |post| %>
+        <li><%= post['id'] %>
+        <%= post['message'] %></li>
+    <% end %>
+
+  <% else %>
+    Couldn't retrieve posts.
+  <% end %>
