@@ -15,9 +15,6 @@ Rails.application.routes.draw do
 
   get 'auth/:provider/callback', to: 'authentications#create'
 
-  #get 'auth/facebook', as: "auth_provider"
-  #get 'auth/facebook/callback', to: 'authentications#index'
-
   resources :users do
     resources :authentications, only: [:index]
     resources :posts, only: [:index]

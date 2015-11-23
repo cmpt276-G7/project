@@ -13,6 +13,7 @@ gem 'omniauth'
 gem 'nifty-generators'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-instagram'
 gem "koala", "~> 1.10.0rc"
 
 # Use postgresql as the database for Active Record
