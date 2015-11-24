@@ -1,9 +1,13 @@
 <% provide(:title, 'Your accounts') %>
 
-<%= link_to "Login with Facebook", '/auth/facebook' %>
-<%= link_to "Login with Twitter", '/auth/twitter' %>
-<%= link_to "Login with Instagram", '/auth/instagram' %>
+<t>SMCrate username: </t>
 <%= @user.name %>
+
+<p>
+<li><%= link_to "Login with Facebook", '/auth/facebook' %></li>
+<li><%= link_to "Login with Twitter", '/auth/twitter' %></li>
+<li><%= link_to "Login with Instagram", '/auth/instagram' %></li>
+</p>
 
   <% unless @authentications.nil? %>
 
@@ -16,9 +20,11 @@
 
   <% if fb_authenticated?(@user) %>
     You are authenticated with Facebook, Congratulations!
+     flash[:success] = "Account activated!"
     <%= image_tag @fbdata['picture']['data']['url'].to_s %>
     <%= @fbdata['name'] %>
 
   <% else %>
     We couldn't get your Facebook information. Try Logging in again.
+    flash[:info] = "Account activated!"
   <% end %>
