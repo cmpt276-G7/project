@@ -10,6 +10,8 @@ class PostsController < ApplicationController
       @posts = Post.FBget(auth['token'])
     end
 
+    @posts2 = Post.Twitterget("asdf")
+
   end
 
 end

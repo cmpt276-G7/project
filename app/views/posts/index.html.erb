@@ -1,13 +1,16 @@
 <% provide(:title, "Posts") %>
 
-<%= @user.name %>
-
   <% if fb_authenticated?(@user) %>
+    <div class="container">
     <% @posts.each do |post| %>
-        <li><%= post['id'] %>
-        <%= post['message'] %></li>
+        <li><h2><%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") %>
+        <%= post['message'] %>
+        <%= link_to "Link", post['source'] %></h2></li>
     <% end %>
+    </div>
 
   <% else %>
     Couldn't retrieve posts.
   <% end %>
+
+  <%= @posts2.to_yaml  %>
