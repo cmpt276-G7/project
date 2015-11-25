@@ -51,3 +51,7 @@ Many thanks to [Michael Hartl's Rails Book](https://www.railstutorial.org/book/f
 -instagram callback url very confusing... possibly just a temporary bug but no time to find out... consider scrapping IG from project unless can fix
 
 -post model made, just need to grab posts from twitter and combine them with FB posts
+
+##### Remarks (Nov 25):
+
+-add columns to posts to begin combining facebook and twitter posts

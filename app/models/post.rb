@@ -1,7 +1,12 @@
 class Post < ActiveRecord::Base
+  belongs_to :user
+
   def self.FBget(authtoken)
     facebook = Koala::Facebook::API.new(authtoken)
-    facebook.get_object("me/feed?limit=50")
+    ##can get more fields later depending on what we need,
+    ##  but should make sure that twitter has same data we can scrap
+    facebook.get_object("me/feed?fields=message,story,
+    created_time,from{name,id,picture},picture,link&limit=50")
   end
 
   def self.Twitterget(authtoken)
