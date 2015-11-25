@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.35);
+}
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -57,6 +61,7 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+
 }
 
 /* header */
