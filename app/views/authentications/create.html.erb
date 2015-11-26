@@ -1,0 +1,22 @@
+<% provide(:title, 'Your accounts') %>
+
+<%= link_to "Login with Facebook", '/auth/facebook' %>
+<%= link_to "Login with Twitter", '/auth/twitter' %>
+<%= link_to "Login with Instagram", '/auth/instagram' %>
+<%= @user.name %>
+
+
+<% @authentications.each do |auth| %>
+    <%= auth.provider %>
+    <%= auth.uid %>
+<% end %>
+
+
+<% if fb_authenticated?(@user) %>
+  You are authenticated with Facebook, Congratulations!
+  <%= image_tag @fbdata['picture']['data']['url'].to_s %>
+  <%= @fbdata['name'] %>
+
+<% else %>
+  We couldn't get your Facebook information. Try Logging in again.
+<% end %>
