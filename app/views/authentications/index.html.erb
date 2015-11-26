@@ -20,11 +20,9 @@
 
   <% if fb_authenticated?(@user) %>
     You are authenticated with Facebook, Congratulations!
-     flash[:success] = "Account activated!"
     <%= image_tag @fbdata['picture']['data']['url'].to_s %>
     <%= @fbdata['name'] %>
 
   <% else %>
     We couldn't get your Facebook information. Try Logging in again.
-    flash[:info] = "Account activated!"
   <% end %>
