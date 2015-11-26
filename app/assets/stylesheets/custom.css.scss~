@@ -11,22 +11,38 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+<<<<<<< HEAD
+@mixin shadowed-boxes{
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 5px #888;
+=======
 
 @mixin shadowed-boxes {
   -moz-box-shadow:0 0 5px #888;
   -webkit-box-shadow:0 0 5px #888;
   box-shadow:0 0 5px #888;
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }
 
 /* universal */
 
 body {
+<<<<<<< HEAD
+  padding-top: 50px;
+  background-color: #00cc88; //teal background
+=======
   padding-top: 150px;
   background-color: #00ee99;
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }
 
 section {
   overflow: auto;
+<<<<<<< HEAD
+
+=======
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }
 
 textarea {
@@ -39,7 +55,14 @@ textarea {
     margin-bottom: 10px;
   }
 }
+<<<<<<< HEAD
+.jumbotron{
+  
+  @include shadowed-boxes;
+}
+=======
 
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,6 +74,10 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+<<<<<<< HEAD
+
+=======
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }
 
 h2 {
@@ -60,11 +87,23 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: $gray-light;
+<<<<<<< HEAD
+
+=======
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+<<<<<<< HEAD
+  background-color: #88dd88;
+  ff:1.5em;
+  border-style: groove;
+  border-width:3px;
+
+=======
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }
 
 /* header */
@@ -90,9 +129,15 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
+<<<<<<< HEAD
+  color: $gray-medium-light;
+  a{
+    color: $gray-darker;
+=======
   color: $gray-light;
   a{
     color: $gray;
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
     &.hover{
       color: $gray-darker;
     }
@@ -211,6 +256,21 @@ input {
   }
 }
 
+<<<<<<< HEAD
+// Carousel format
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #33cc88;
+}
+
+.carousel-indicators li {
+    border-color: #33cc88;
+}
+
+.carousel-indicators li.active {
+    background-color: #33cc88;
+=======
 // Carousel
 .carousel-control.right, .carousel-control.left {
     background-image: none;
@@ -223,6 +283,7 @@ input {
 
 .carousel-indicators li.active {
     background-color: #66ee99;
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }
 
 .item h4 {
@@ -232,11 +293,22 @@ input {
     font-style: italic;
     margin: 70px 0;
 }
+<<<<<<< HEAD
+.carousel-inner > .img {
+margin:0 auto;
+}
+=======
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 
 .item span {
     font-style: normal;
 }
 
+<<<<<<< HEAD
+#myCarousel {
+height: 300px;
+=======
 .carousel-inner > .img{
     margin: 0 auto;
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }

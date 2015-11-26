@@ -1,6 +1,0 @@
-development:
-  app_id: ca1256cae63841e58f19eeb8701015e3
-  secret: b1280eb08ac749828935bf5024ab6bcf
-production:
-  app_id: ca1256cae63841e58f19eeb8701015e3
-  secret: b1280eb08ac749828935bf5024ab6bcf

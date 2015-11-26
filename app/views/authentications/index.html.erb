@@ -1,28 +1,14 @@
 <% provide(:title, 'Your accounts') %>
 
-<t> SMCrate username: </t>
+<%= link_to "Login with Facebook", '/auth/facebook' %>
 <%= @user.name %>
 
-<p>
-<li><%= link_to "Login with Facebook", '/auth/facebook' %></li>
-<li><%= link_to "Login with Twitter", '/auth/twitter' %></li>
-<li><%= link_to "Login with Instagram", '/auth/instagram' %></li>
-</p>
-
   <% unless @authentications.nil? %>
-
-  <% @authentications.each do |auth| %>
-      <%= auth.provider %>
-      <%= auth.uid %>
-  <% end %>
-
+    <%= @authentications.provider %>
+    <%= @authentications.uid %>
   <% end %>
 
   <% if fb_authenticated?(@user) %>
-    You are authenticated with Facebook, Congratulations!
-    <%= image_tag @fbdata['picture']['data']['url'].to_s %>
-    <%= @fbdata['name'] %>
+    You are authenticated with Facebook! Congratulations!
 
-  <% else %>
-    We couldn't get your Facebook information. Try Logging in again.
   <% end %>
