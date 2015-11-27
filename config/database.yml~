@@ -29,10 +29,14 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: postgres
+<<<<<<< HEAD
+  username: cgyli
+=======
+  username: cgyli			
+>>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 
   # The password associated with the postgres role (username).
-  password: 123qweasd
+  password: pudding
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -58,8 +62,8 @@ development:
 test:
   <<: *default
   database: project_test
-  username: postgres
-  password: 123qweasd
+  username: cgyli
+  password: pudding
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

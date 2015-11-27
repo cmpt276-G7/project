@@ -13,11 +13,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-<<<<<<< HEAD
     <h4>"features/description/review"<br><span style="font-style:normal;"></span></h4>
-=======
-    <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
->>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
     </div>
     <div class="item">
       <h4>"features/description/review"<br><span style="font-style:normal;"></span></h4>

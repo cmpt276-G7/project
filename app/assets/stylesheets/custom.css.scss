@@ -17,22 +17,14 @@ $gray-medium-light: #eaeaea;
   box-shadow: 0 0 5px #888;
 }
 
-@mixin shadowed-boxes {
-  -moz-box-shadow:0 0 5px #888;
-  -webkit-box-shadow:0 0 5px #888;
-  box-shadow:0 0 5px #888;
-}
 
 /* universal */
 
 body {
-<<<<<<< HEAD
+
   padding-top: 55px;
   background-color: #00cc88; //teal background
-=======
-  padding-top: 150px;
-  background-color: #00ee99;
->>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
+
 }
 
 section {
@@ -232,7 +224,7 @@ input {
   }
 }
 
-<<<<<<< HEAD
+
 // Carousel format
 
 .carousel-control.right, .carousel-control.left {
@@ -246,7 +238,7 @@ input {
 
 .carousel-indicators li.active {
     background-color: #33cc88;
-=======
+}
 // Carousel
 .carousel-control.right, .carousel-control.left {
     background-image: none;
@@ -259,7 +251,7 @@ input {
 
 .carousel-indicators li.active {
     background-color: #66ee99;
->>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
+
 }
 
 .item h4 {
@@ -269,23 +261,17 @@ input {
     font-style: italic;
     margin: 70px 0;
 }
-<<<<<<< HEAD
+
 .carousel-inner > .img {
 margin:0 auto;
 }
-=======
->>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
+
 
 .item span {
     font-style: normal;
 }
 
-<<<<<<< HEAD
+
 #myCarousel {
 height: 300px;
-=======
-.carousel-inner > .img{
-    margin: 0 auto;
-    
->>>>>>> b36ea5773fbce43c8ebe04d1cb7410624d3aaf4f
 }

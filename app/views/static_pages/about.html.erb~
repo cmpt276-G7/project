@@ -1,4 +1,4 @@
 <% provide(:title, "About") %>
 
-<h1>About Us/h1>
+<h1>About Us</h1>
 <p>Welcome to our SMCrate Application page. This is a project done by a group of students in CMPT 276 of Fall 2015. They call us, Group 7. Our goal for this application webpage is to create a free all in one social media hub that lets users who love social media keep doing what they love in a easier and more convenient manner. This idea is not new, but most of those applications need subscription that cost money. This starter project may not have as many features as those veteran applications, but we are working on it to improve the experience for all users out there who like a litle something that is helpful and free of cost. </p>
