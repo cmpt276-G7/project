@@ -3,11 +3,11 @@
   <% if fb_authenticated?(@user) %>
     <div class="container">
     <% @posts.each do |post| %>
-        <li><h2><%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") %>
-        <%= post['from']['name'] %>
-        <%= image_tag post['from']['picture']['data']['url'].to_s %>
-        <%= post['message'] %>
-        <%= link_to "Link", post['link'] %></h2></li>
+        <li><h2><%= post.timeposted.strftime("%b %d, %Y (%H:%M)") %>
+        <%= post.author %>
+        <%= image_tag post.picture %>
+        <%= post.message %>
+        <%= link_to "Link", post.link %></h2></li>
     <% end %>
     </div>
 
@@ -15,6 +15,9 @@
     Couldn't retrieve posts.
   <% end %>
 
-  <%= @posts.to_yaml %>
+  <!--<%= @posts.to_yaml %>-->
 
-  <!--<%= @posts2.to_yaml  %>-->
+  <%= @posts2.nil?  %>
+
+<!-- time formatting for posts -->
+<!-- <%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") -->
