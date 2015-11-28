@@ -1,4 +1,4 @@
-<% provide(:title, "All Feeds") %>
+<% provide(:title, "Facebook") %>
 
   <% if fb_authenticated?(@user) %>
     <div class="container">
@@ -15,8 +15,3 @@
   <% else %>
     Couldn't retrieve posts.
   <% end %>
-
-  <!--<%= @posts.to_yaml %>-->
-
-<!-- time formatting for posts -->
-<!-- <%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") -->

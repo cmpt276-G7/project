@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :authentications, only: [:index]
     resources :posts, only: [:index]
+    get 'facebook' => 'posts#facebookfeed'
+    get 'twitter' => 'posts#twitterfeed'
+    get 'custom' => 'posts#customfeed'
+    post 'custom' => 'posts#customfeed'
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

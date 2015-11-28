@@ -1,0 +1,9 @@
+<% provide(:title, "Custom Feed") %>
+
+<%= form_for :options, url: user_custom_path do |f| %>
+
+  <%= f.label :maxposts %>
+  <%= f.text_field :maxposts, class: 'form-control' %>
+
+  <%= f.submit "Filter", class: "btn btn-primary" %>
+<% end %>

@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
       config.access_token_secret = secret
     end
 
-    client.home_timeline
+    client.home_timeline(count: 50)
   end
 
 end
