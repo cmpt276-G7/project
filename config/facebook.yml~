@@ -1,4 +1,4 @@
- development:
+development:
   app_id: 981835738549395
   secret: 1e61816882d67071efcb6ca8528dfe4d
 production:
