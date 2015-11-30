@@ -4,12 +4,16 @@
     <div class="postings">
     <ul id="post">
     <% @posts.each do |post| %>
-        <li><h2><%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") %>
-        <%= post['from']['name'] %>
+        <li><h3 class="userinfo">
         <%= image_tag post['from']['picture']['data']['url'].to_s %>
+        <%= post['from']['name'] %>
+	<span>
+	<%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") %> </span></h3>
+        <p class="postcontent">
         <%= post['message'] %>
-        <%= link_to "Link", post['link'] %></h2></li> </ul>
+	</p> <span id="link"><%= link_to "Link", post['link'] %></span></li>
     <% end %>
+    </ul>
     </div>
 
   <% else %>

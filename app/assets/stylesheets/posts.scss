@@ -4,20 +4,51 @@
 
 
 .postings{
-    //background-color:white;
-    padding:10px;
+    margin: auto;
+    //background-color:light-blue;
+    padding:auto;
 }
-/*
-.post{
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
+
+ul#post li{
+    border-style: outset;
+    border-width: 5px;
+    border-color: gray;
     background-color: white;
     list-style-type: none;
+    margin: 20px;
+    padding: 20px;
 }
-*/
-h2{
 
 
+.userinfo{
+  border-radius: 15px 50px;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: bold;
+  color: blue;
+  padding-bottom: 10px;
+  border-bottom-style:groove;
+}
+.userinfo span{
+  font-size: 1em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  float: right;
+  font-weight: normal;
+  color: gray;
+  padding-bottom: 30px;
+}
 
+.postcontent{
+ background-color:white;
+ border: none;
+
+}
+
+.link{
+float: right;
+padding-bottoms: 20px;
+font-style: italic;
 }
