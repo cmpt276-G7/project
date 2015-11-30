@@ -10,8 +10,9 @@
 }
 
 ul#post li{
+    border-radius: 15px 50px;
     border-style: outset;
-    border-width: 5px;
+    border-width: 3px;
     border-color: gray;
     background-color: white;
     list-style-type: none;
@@ -21,7 +22,6 @@ ul#post li{
 
 
 .userinfo{
-  border-radius: 15px 50px;
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;

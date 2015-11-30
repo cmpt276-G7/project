@@ -10,6 +10,7 @@
 }
 
 ul#post li{
+    border-radius: 15px 50px;
     border-style: outset;
     border-width: 5px;
     border-color: gray;
@@ -21,7 +22,6 @@ ul#post li{
 
 
 .userinfo{
-  border
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
