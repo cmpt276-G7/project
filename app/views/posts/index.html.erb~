@@ -1,13 +1,14 @@
 <% provide(:title, "Posts") %>
 
   <% if fb_authenticated?(@user) %>
-    <div class="container">
+    <div class="postings">
+    <ul id="post">
     <% @posts.each do |post| %>
         <li><h2><%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") %>
         <%= post['from']['name'] %>
         <%= image_tag post['from']['picture']['data']['url'].to_s %>
         <%= post['message'] %>
-        <%= link_to "Link", post['link'] %></h2></li>
+        <%= link_to "Link", post['link'] %></h2></li> </ul>
     <% end %>
     </div>
 

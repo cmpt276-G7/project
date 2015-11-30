@@ -1,7 +1,7 @@
 <% provide(:title, "Posts") %>
 
   <% if fb_authenticated?(@user) %>
-    <div class="container">
+    <div class="postings">
     <% @posts.each do |post| %>
         <li><h2><%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") %>
         <%= post['from']['name'] %>
