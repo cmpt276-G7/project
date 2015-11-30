@@ -35,12 +35,20 @@ class PostsController < ApplicationController
     end
   end
 
-
-  def index
+  def refreshfeed
     @user = current_user
     @user.posts.destroy_all
     getfbposts
     gettwitterposts
+
+    flash[:success] = "Refreshed Posts"
+    redirect_to(:back)
+  end
+
+
+
+  def index
+    @user = current_user
 
     #add to @posts instance var
     @posts = @user.posts.all
@@ -50,22 +58,18 @@ class PostsController < ApplicationController
 
   def facebookfeed
     @user = current_user
-    @user.posts.destroy_all
-    getfbposts
 
     #add to @posts instance var
-    @posts = @user.posts.all
+    @posts = @user.posts.where(provider: 'facebook')
     @posts.order! 'timeposted DESC'
 
   end
 
   def twitterfeed
     @user = current_user
-    @user.posts.destroy_all
-    gettwitterposts
 
     #add to @posts instance var
-    @posts = @user.posts.all
+    @posts = @user.posts.where(provider: 'twitter')
     @posts.order! 'timeposted DESC'
   end
 

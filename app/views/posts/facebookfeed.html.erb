@@ -1,5 +1,7 @@
 <% provide(:title, "Facebook") %>
 
+<%= link_to "Refresh Posts", user_refresh_path %>
+
   <% if fb_authenticated?(@user) %>
     <div class="container">
     <% @posts.each do |post| %>
