@@ -1,3 +1,54 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.postings{ //container renamed so to not affect universal settings
+    margin: auto;
+    //background-color:light-blue;
+    padding:auto;
+}
+
+ul#post li{ //added such easier to manipulate individual posts
+    border-radius: 15px 50px;
+    border-style: outset;
+    border-width: 3px;
+    border-color: gray;
+    background-color: white;
+    list-style-type: none;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+.userinfo{ // heading
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: bold;
+  color: blue;
+  padding-bottom: 10px;
+  border-bottom-style:groove;
+}
+.userinfo span{ //time
+  font-size: 1em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  float: right;
+  font-weight: normal;
+  color: gray;
+  padding-bottom: 30px;
+}
+
+.postcontent{ //post
+ background-color:white;
+ border: none;
+
+}
+
+.link{ //link at bottom
+float: right;
+padding-bottoms: 20px;
+font-style: italic;
+}

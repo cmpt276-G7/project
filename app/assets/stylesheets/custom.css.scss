@@ -5,20 +5,30 @@
 
 $gray-medium-light: #eaeaea;
 
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+@mixin shadowed-boxes{
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 5px #888;
+}
+
 
 /* universal */
 
 body {
-  padding-top: 60px;
+  margin: auto;
+  padding-top: 105px;
+  background-color: #00cc88; //teal background
 }
 
 section {
   overflow: auto;
+
 }
 
 textarea {
@@ -31,7 +41,10 @@ textarea {
     margin-bottom: 10px;
   }
 }
+.jumbotron{
 
+  @include shadowed-boxes;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,19 +56,27 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
+  text-align: center;
   font-weight: normal;
   color: $gray-light;
+
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  background-color: #88dd88;
+  ff:1.5em;
+  border-style: groove;
+  border-width:3px;
+
 }
 
 /* header */
@@ -81,9 +102,9 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  color: $gray-medium-light;
   a{
-    color: $gray;
+    color: $gray-darker;
     &.hover{
       color: $gray-darker;
     }
@@ -200,4 +221,41 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+
+// Carousel
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #66ee99;
+}
+
+.carousel-indicators li {
+    border-color: #66ee99;
+}
+
+.carousel-indicators li.active {
+    background-color: #66ee99;
+
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.carousel-inner > .img {
+    margin:0 auto;
+}
+
+.item span {
+    font-style: normal;
+}
+
+
+#myCarousel {
+   height: 300px;
 }

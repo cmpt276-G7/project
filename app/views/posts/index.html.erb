@@ -3,15 +3,20 @@
 <%= link_to "Refresh Posts", user_refresh_path %>
 
   <% if fb_authenticated?(@user) %>
-    <div class="container">
+    <div class="postings">
+    <ul id="post">
     <% @posts.each do |post| %>
-        <li>source: <%= post.provider %>
-        <%= post.timeposted.strftime("%b %d, %Y (%H:%M)") %>
-        <%= post.author %>
+        <li><h3 class="userinfo">
         <%= image_tag post.picture %>
-        <%= post.message %>
-        <%= link_to "Link", post.link %></li>
+        <%= post.author %>
+        <span>
+        <%= post.timeposted.strftime("%b %d, %Y (%H:%M)") %></span></h3>
+        <p class="postcontent">
+        <%= post.message %></p>
+        <span class="link"><%= link_to "Link", post.link %></span></li>
+
     <% end %>
+    </ul>
     </div>
 
   <% else %>

@@ -2,18 +2,23 @@
 
 <%= link_to "Refresh Posts", user_refresh_path %>
 
-  <% if fb_authenticated?(@user) %>
-    <div class="container">
-    <% @posts.each do |post| %>
-        <li>source: <%= post.provider %>
-        <%= post.timeposted.strftime("%b %d, %Y (%H:%M)") %>
-        <%= post.author %>
-        <%= image_tag post.picture %>
-        <%= post.message %>
-        <%= link_to "Link", post.link %></li>
-    <% end %>
-    </div>
+<% if fb_authenticated?(@user) %>
+  <div class="postings">
+  <ul id="post">
+  <% @posts.each do |post| %>
+      <li><h3 class="userinfo">
+      <%= image_tag post.picture %>
+      <%= post.author %>
+      <span>
+      <%= post.timeposted.strftime("%b %d, %Y (%H:%M)") %></span></h3>
+      <p class="postcontent">
+      <%= post.message %></p>
+      <span class="link"><%= link_to "Link", post.link %></span></li>
 
-  <% else %>
-    Couldn't retrieve posts.
   <% end %>
+  </ul>
+  </div>
+
+<% else %>
+  Couldn't retrieve posts.
+<% end %>
