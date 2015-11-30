@@ -1,8 +1,8 @@
-<% provide(:title, "All Feeds") %>
+<% provide(:title, "Twitter") %>
 
 <%= link_to "Refresh Posts", user_refresh_path %>
 
-  <% if fb_authenticated?(@user) %>
+  <% if twitter_authenticated?(@user) %>
     <div class="container">
     <% @posts.each do |post| %>
         <li>source: <%= post.provider %>
@@ -17,8 +17,3 @@
   <% else %>
     Couldn't retrieve posts.
   <% end %>
-
-  <!--<%= @posts.to_yaml %>-->
-
-<!-- time formatting for posts -->
-<!-- <%= post['created_time'].to_time.strftime("%b %d, %Y (%H:%M)") -->

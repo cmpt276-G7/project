@@ -1,0 +1,15 @@
+<% provide(:title, "Custom Feed") %>
+
+<%= form_tag("/users/"+@user.id.to_s+"/custom", method: "get") do %>
+
+  <%= label_tag :searchterm %>
+  <%= text_field_tag :searchterm %>
+
+  <%= label_tag(:showfb, "Show Facebook Posts?") %>
+  <%= check_box_tag(:showfb) %>
+
+  <%= label_tag(:showtw, "Show Twitter Posts?") %>
+  <%= check_box_tag(:showtw) %>
+
+  <%= submit_tag "Filter", class: "btn btn-primary" %>
+<% end %>

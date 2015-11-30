@@ -16,10 +16,10 @@ class AuthenticationsController < ApplicationController
   def create
     @user = current_user
     auth = request.env["omniauth.auth"]
-    if @user.authentications.where(provider: auth['provider']).where(uid: auth['uid']).exists?
+    if @user.authentications.where(provider: auth['provider']).where(user_id: @user.id).exists?
 
-      thisauth = @user.authentications.find_by(provider: auth['provider'], uid: auth['uid'])
-      thisauth.updatecredentials(auth["credentials"])
+      thisauth = @user.authentications.find_by(provider: auth['provider'], user_id: @user.id)
+      thisauth.updatecredentials(auth)
       flash[:success] = "Authentication renewed!"
 
     else

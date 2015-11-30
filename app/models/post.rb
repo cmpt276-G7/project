@@ -9,15 +9,15 @@ class Post < ActiveRecord::Base
     created_time,from{name,id,picture},picture,link&limit=50")
   end
 
-  def self.Twitterget(authtoken)
+  def self.Twitterget(authtoken, secret)
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "Rjgh9eJVRHDLbD4zVAWECXsoF"
       config.consumer_secret     = "CASoUOkQ3xMuIw0lLG9jTNIJGcBYDp3WUDF9TT6zgRNKTjEG3O"
-      config.access_token        = "346341072-w5DxUChgGkSRDjdNqHCNnK5OWk64el4NQT76Dn6O"
-      config.access_token_secret = "SOiXMnqZT2MDhMVBAveID7OMAslLzwils7DJbnpIL85PY"
+      config.access_token        = authtoken
+      config.access_token_secret = secret
     end
 
-    client.home_timeline
+    client.home_timeline(count: 50)
   end
 
 end

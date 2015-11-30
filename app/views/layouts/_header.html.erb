@@ -6,8 +6,18 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Posts", user_posts_path(current_user) %></li>
           <li><%= link_to "Users", users_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Feeds <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "All Feeds", user_posts_path(current_user) %></li>
+              <li><%= link_to "Facebook Feed", user_facebook_path(current_user) %></li>
+              <li><%= link_to "Twitter Feed", user_twitter_path(current_user) %></li>
+              <li><%= link_to "Custom Feed", user_custom_path(current_user) %></li>
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
