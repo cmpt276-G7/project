@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.postings{
+.postings{ //container renamed so to not affect universal settings
     margin: auto;
     //background-color:light-blue;
     padding:auto;
 }
 
-ul#post li{
+ul#post li{ //added such easier to manipulate individual posts
     border-radius: 15px 50px;
     border-style: outset;
     border-width: 3px;
@@ -21,7 +21,7 @@ ul#post li{
 }
 
 
-.userinfo{
+.userinfo{ // heading
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
@@ -31,7 +31,7 @@ ul#post li{
   padding-bottom: 10px;
   border-bottom-style:groove;
 }
-.userinfo span{
+.userinfo span{ //time
   font-size: 1em;
   letter-spacing: -1px;
   margin-bottom: 30px;
@@ -41,13 +41,13 @@ ul#post li{
   padding-bottom: 30px;
 }
 
-.postcontent{
+.postcontent{ //post
  background-color:white;
  border: none;
 
 }
 
-.link{
+.link{ //link at bottom
 float: right;
 padding-bottoms: 20px;
 font-style: italic;

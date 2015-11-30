@@ -12,7 +12,7 @@
 ul#post li{
     border-radius: 15px 50px;
     border-style: outset;
-    border-width: 5px;
+    border-width: 3px;
     border-color: gray;
     background-color: white;
     list-style-type: none;
