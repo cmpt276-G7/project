@@ -1,9 +1,15 @@
 <% provide(:title, "Custom Feed") %>
 
-<%= form_for :options, url: user_custom_path do |f| %>
+<%= form_tag("/users/"+@user.id.to_s+"/custom", method: "get") do %>
 
-  <%= f.label :maxposts %>
-  <%= f.text_field :maxposts, class: 'form-control' %>
+  <%= label_tag :searchterm %>
+  <%= text_field_tag :searchterm %>
 
-  <%= f.submit "Filter", class: "btn btn-primary" %>
+  <%= label_tag(:showfb, "Show Facebook Posts?") %>
+  <%= check_box_tag(:showfb) %>
+
+  <%= label_tag(:showtw, "Show Twitter Posts?") %>
+  <%= check_box_tag(:showtw) %>
+
+  <%= submit_tag "Filter", class: "btn btn-primary" %>
 <% end %>

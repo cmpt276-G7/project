@@ -3,12 +3,12 @@
   <% if fb_authenticated?(@user) %>
     <div class="container">
     <% @posts.each do |post| %>
-        <li><h2>source: <%= post.provider %>
+        <li>source: <%= post.provider %>
         <%= post.timeposted.strftime("%b %d, %Y (%H:%M)") %>
         <%= post.author %>
         <%= image_tag post.picture %>
         <%= post.message %>
-        <%= link_to "Link", post.link %></h2></li>
+        <%= link_to "Link", post.link %></li>
     <% end %>
     </div>
 

@@ -26,3 +26,9 @@
   <% else %>
     We couldn't get your Facebook information. Try Logging in again.
   <% end %>
+
+  <% if twitter_authenticated?(@user) %>
+    You are authenticated with Twitter, Congratulations!
+  <% else %>
+    We couldn't get your Twitter information. Try Logging in again.
+  <% end %>

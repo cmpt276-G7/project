@@ -70,8 +70,10 @@ class PostsController < ApplicationController
   end
 
   def customfeed
-    if !params[:options].nil?
-      render plain: params[:options].inspect
+    @user = current_user
+
+    if !params[:searchterm].blank?
+      render plain: params[:searchterm]
     end
 
   end
