@@ -6,8 +6,9 @@ module AuthenticationsHelper
     if user.authentications.where(provider: "facebook").exists?
       fbauth = user.authentications.find_by(provider: "facebook")
       fbdata = User.koala(fbauth['token'])
+      fbdata2 = Post.FBget(fbauth['token'])
 
-      !fbdata['name'].nil?
+      !fbdata['name'].nil? && !fbdata2[0]['data'].nil?
     end
   end
 

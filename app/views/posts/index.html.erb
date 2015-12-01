@@ -2,7 +2,7 @@
 
 <%= link_to "Refresh Posts", user_refresh_path %>
 
-  <% if fb_authenticated?(@user) %>
+  <% if (fb_authenticated?(@user) || twitter_authenticated?(@user)) %>
     <div class="postings">
     <ul id="post">
     <% @posts.each do |post| %>

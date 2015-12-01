@@ -1,8 +1,10 @@
 <% provide(:title, "Custom Feed") %>
 
+<%= link_to "Refresh Posts", user_refresh_path %>
+
 <%= form_tag("/users/"+@user.id.to_s+"/custom", method: "get") do %>
 
-  <%= label_tag :searchterm %>
+  <%= label_tag "Search" %>
   <%= text_field_tag :searchterm %>
 
   <%= label_tag(:showfb, "Show Facebook Posts?") %>
@@ -12,4 +14,48 @@
   <%= check_box_tag(:showtw) %>
 
   <%= submit_tag "Filter", class: "btn btn-primary" %>
+<% end %>
+<% if @noposts %>
+  <p>Couldn't find posts with those settings. You searched for "<%= @searchterm %>" </p>
+<% else %>
+  <p> <%= @posts.count %> posts found. </p>
+  <% if (twitter_authenticated?(@user) || fb_authenticated?(@user)) %>
+    <div class="postings">
+    <ul id="post">
+    <% @posts.each do |post| %>
+        <li><h3 class="userinfo">
+        <%= image_tag post.picture %>
+        <%= link_to post.author,"https://twitter.com/#{post.author}" %>
+  <span>
+  <%= post.timeposted.strftime("%b %d, %Y (%H:%M)") %>
+
+  <% if post.provider = "twitter" %>
+          <%= link_to post.link do %>
+          <%= image_tag 'http://eurodoc.net/wp-content/themes/proEducation/images/social-profiles/twitter.png' %>
+          <% end %>
+
+          <% end %>
+
+
+  </span></h3>
+        <p class="postcontent">
+        <%= post.message %>
+        </p>
+  <span class="link"><%= link_to "Reply", "https://twitter.com/intent/tweet?in_reply_to=#{post.link.reverse.to_i.to_s.reverse.to_i}" %></span>
+
+  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url=<%= post.link%> </a>Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  <a href=<%= "https://twitter.com/#{post.author}" %> class="twitter-follow-button" data-show-count="true">Follow <%= post.author %></a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </li>
+
+    <% end %>
+    </ul>
+    </div>
+
+  <% else %>
+    Couldn't retrieve posts.
+  <% end %>
 <% end %>

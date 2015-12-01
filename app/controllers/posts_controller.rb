@@ -75,10 +75,26 @@ class PostsController < ApplicationController
 
   def customfeed
     @user = current_user
+    @posts = @user.posts.all
 
     if !params[:searchterm].blank?
-      render plain: params[:searchterm]
+      @searchterm = params[:searchterm]
+      @posts = @user.posts.where("message like ?", "%" + @searchterm + "%")
     end
+
+    if params[:showfb].nil? && !params[:showtw].nil?
+      @posts = @posts.where(provider: "twitter")
+    elsif !params[:showfb].nil? && params[:showtw].nil?
+      @posts = @posts.where(provider: "facebook")
+    end
+
+    if @posts.empty?
+      @noposts = true
+    else
+      @noposts = false
+    end
+
+
 
   end
 
