@@ -19,16 +19,16 @@
   <% end %>
 
   <% if fb_authenticated?(@user) %>
-    You are authenticated with Facebook, Congratulations!
+    <li>You are authenticated with Facebook, Congratulations!</li>
     <%= image_tag @fbdata['picture']['data']['url'].to_s %>
     <%= @fbdata['name'] %>
 
   <% else %>
-    We couldn't get your Facebook information. Try Logging in again.
+    <li>We couldn't get your Facebook information. Try Logging in again.</li>
   <% end %>
 
   <% if twitter_authenticated?(@user) %>
-    You are authenticated with Twitter, Congratulations!
+    <li>You are authenticated with Twitter, Congratulations!</li>
   <% else %>
-    We couldn't get your Twitter information. Try Logging in again.
+    <li>We couldn't get your Twitter information. Try Logging in again.</li>
   <% end %>
