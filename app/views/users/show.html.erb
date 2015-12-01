@@ -4,21 +4,8 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= link_to @user.name,"https://gravatar.com/#{@user.name}" %> - ID: #<%= @user.id %>
+        <%= @user.name %>
         <p><%= @user.email %></p>
-        <font size="3" color="blue">Account Created at <%= @user.created_at%><br>
-        Updated at <%= @user.updated_at%><br>
-        Activated Status: <%= @user.activated%><br>
-        Admin Status: <%=@user.activated%>
-        <br><br>
-        </font>
-        <font size="3" color="blue"><%= link_to "Settings", edit_user_path(current_user) %></font><br>
-        <font size="3" color="blue"><%= link_to "Social Media Accounts", user_authentications_path(current_user) %></font><br>
-        <font size="3" color="blue"><%= link_to "Log out", logout_path, method: "delete" %><br>
-        </font>
-
-        <h4></h4>
-        <h4></h4>
       </h1>
     </section>
   </aside>
