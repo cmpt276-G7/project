@@ -1,9 +1,13 @@
 <% provide(:title, 'Your accounts') %>
 
-<%= link_to "Login with Facebook", '/auth/facebook' %>
-<%= link_to "Login with Twitter", '/auth/twitter' %>
-<%= link_to "Login with Instagram", '/auth/instagram' %>
+<t> SMCrate username: </t>
 <%= @user.name %>
+
+<p>
+<li><%= link_to "Login with Facebook", '/auth/facebook' %></li>
+<li><%= link_to "Login with Twitter", '/auth/twitter' %></li>
+<li><%= link_to "Login with Instagram", '/auth/instagram' %></li>
+</p>
 
 
 <% @authentications.each do |auth| %>
