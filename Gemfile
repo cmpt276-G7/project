@@ -16,6 +16,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-instagram'
 gem "koala", "~> 1.10.0rc"
 gem 'twitter'
+gem 'rails_12factor'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
